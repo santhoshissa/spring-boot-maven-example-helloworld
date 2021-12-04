@@ -23,8 +23,8 @@ pipeline {
             steps {
                 echo 'deploy'
                 bat 'cd'
-                bat 'del ..\\target\SpringBootMavenExample-1.3.5.RELEASE.war'
-                bat 'copy "C:\\Users\\Sanu\\Desktop\\spring-boot-maven-example-helloworld-master\\target\\SpringBootMavenExample-1.3.5.RELEASE.war" ..\\target\'
+                bat 'del ..\\target\\SpringBootMavenExample-1.3.5.RELEASE.war'
+                bat 'copy "C:\\Users\\Sanu\\Desktop\\spring-boot-maven-example-helloworld-master\\target\\SpringBootMavenExample-1.3.5.RELEASE.war" ..\\target\\'
             }
         }
        
