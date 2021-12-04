@@ -2,10 +2,12 @@
 pipeline {
     agent any
     stages {
-        stage('Git pull') {
+        stage('Code Checkout') {
             steps {
-                echo 'Git Pull'
-              git 'https://github.com/santhoshissa/hello-world-spring-boot.git'
+                echo 'CheckOut SCM'
+                cleanWs()
+                checkout scm
+                //git 'https://github.com/santhoshissa/spring-boot-maven-example-helloworld.git'
             }
         }
        stage('mvn actions') {
@@ -21,7 +23,8 @@ pipeline {
             steps {
                 echo 'deploy'
                 bat 'cd'
-                //bat 'copy "C:\Program Files\Apache Software Foundation\Tomcat 8.5\webapps"'
+                bat 'del ..\\target\SpringBootMavenExample-1.3.5.RELEASE.war'
+                bat 'copy "C:\\Users\\Sanu\\Desktop\\spring-boot-maven-example-helloworld-master\\target\\SpringBootMavenExample-1.3.5.RELEASE.war" ..\\target\'
             }
         }
        
