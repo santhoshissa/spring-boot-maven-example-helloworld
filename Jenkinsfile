@@ -5,7 +5,7 @@ pipeline {
         stage('Code Checkout') {
             steps {
                 echo 'CheckOut SCM'
-                cleanWs()
+                //cleanWs()
                 checkout scm
                 //git 'https://github.com/santhoshissa/spring-boot-maven-example-helloworld.git'
             }
