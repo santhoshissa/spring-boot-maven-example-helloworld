@@ -24,6 +24,11 @@ pipeline {
                 bat 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000  -Dsonar.login=42b7fe4ecd92c27e96b3a2529d42c68f36144f9d'
             }
         }
+        stage('Deploy approval'){
+            steps {
+                input "Deploy to prod?"
+            }
+        }
       
        stage('deploy') {
             steps {
