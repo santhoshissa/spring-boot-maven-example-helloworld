@@ -14,7 +14,6 @@ pipeline {
             steps {
                 echo 'Running SAST'
                 bat 'mvn spotbugs:spotbugs'
-                bat 'mvn compile site'
             }
         }
        stage('Build and Package') {
