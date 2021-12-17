@@ -10,6 +10,12 @@ pipeline {
                 //git 'https://github.com/santhoshissa/spring-boot-maven-example-helloworld.git'
             }
         }
+        stage('SAST') {
+            steps {
+                echo 'Running SAST'
+                bat 'mvn verify'
+            }
+        }
        stage('Build and Package') {
             steps {
                 echo 'Build and Package'
