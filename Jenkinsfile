@@ -14,6 +14,7 @@ pipeline {
             steps {
                 echo 'Running SAST'
                 bat 'mvn verify'
+                bat 'mvn site'
                
             }
         }
