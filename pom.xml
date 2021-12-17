@@ -39,7 +39,23 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <reporting>
+            
+               <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-site-plugin</artifactId>
+                  <configuration>
+                    <reportPlugins>
+                      <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>findbugs-maven-plugin</artifactId>
+                      </plugin>
+                    </reportPlugins>
+                  </configuration>
+                </plugin>
+           
+        </plugins>
+    </build>
+   <reporting>
     <plugins>
       <plugin>
         <groupId>com.github.spotbugs</groupId>
@@ -53,8 +69,5 @@
       </plugin>
     </plugins>
   </reporting>
-        </plugins>
-    </build>
-  
 
 </project>
