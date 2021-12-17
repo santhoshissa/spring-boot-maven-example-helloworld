@@ -39,31 +39,18 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <plugin>
-            <groupId>com.github.spotbugs</groupId>
-            <artifactId>spotbugs-maven-plugin</artifactId>
-            <version>4.5.0.0</version>
-            <configuration>
-                <includeFilterFile>spotbugs-security-include.xml</includeFilterFile>
-                <excludeFilterFile>spotbugs-security-exclude.xml</excludeFilterFile>
-                <plugins>
-                    <plugin>
-                        <groupId>com.h3xstream.findsecbugs</groupId>
-                        <artifactId>findsecbugs-plugin</artifactId>
-                        <version>1.10.1</version>
-                    </plugin>
-                </plugins>
-                            <reporting>
-    <plugins>
-      <plugin>
-        <groupId>com.github.spotbugs</groupId>
-        <artifactId>spotbugs-maven-plugin</artifactId>
-        <version>4.0.4</version>
-      </plugin>
-    </plugins>
-  </reporting>
-            </configuration>
-        </plugin>
+                <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-site-plugin</artifactId>
+      <configuration>
+        <reportPlugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>findbugs-maven-plugin</artifactId>
+          </plugin>
+        </reportPlugins>
+      </configuration>
+    </plugin>
         </plugins>
     </build>
 </project>
