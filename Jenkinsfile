@@ -13,8 +13,9 @@ pipeline {
         stage('SAST') {
             steps {
                 echo 'Running SAST'
-                bat 'mvn verify'
+               // bat 'mvn verify'
                 bat 'mvn site'
+                bat 'mvn test site'
                
             }
         }
