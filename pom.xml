@@ -53,8 +53,7 @@
                         <version>1.10.1</version>
                     </plugin>
                 </plugins>
-            </configuration>
-                <reporting>
+                            <reporting>
     <plugins>
       <plugin>
         <groupId>com.github.spotbugs</groupId>
@@ -63,6 +62,7 @@
       </plugin>
     </plugins>
   </reporting>
+            </configuration>
         </plugin>
         </plugins>
     </build>
