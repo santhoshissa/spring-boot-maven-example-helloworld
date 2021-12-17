@@ -48,16 +48,13 @@
         </plugins>
     </build>
     <reporting>
-        <plugins>
-            <plugin>
-                <groupId>com.github.spotbugs</groupId>
-                <artifactId>spotbugs-maven-plugin</artifactId>
-                <version>3.1.10</version>
-                <configuration>
-                    <excludeFilterFile>spotbugs_filter.xml</excludeFilterFile>
-                </configuration>
-            </plugin>
-        </plugins>
+           <plugins>
+                <plugin>
+                    <groupId>com.github.spotbugs</groupId>
+                    <artifactId>spotbugs-maven-plugin</artifactId>
+                    <version>3.1.8</version>
+                </plugin>
+            </plugins>
     </reporting>
 
 </project>
