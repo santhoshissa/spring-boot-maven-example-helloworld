@@ -45,6 +45,7 @@
                     <version>4.2.1-SNAPSHOT</version>
                     <configuration>
                         <xmlOutput>true</xmlOutput>
+                        <xmlOutputDirectory>${project.build.directory}/spotbugs-reports</xmlOutputDirectory>
                     </configuration>
                   </plugin>
         </plugins>
