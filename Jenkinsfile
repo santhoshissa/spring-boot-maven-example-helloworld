@@ -13,7 +13,7 @@ pipeline {
         stage('SAST') {
             steps {
                 echo 'Running SAST'
-                bat 'mvn verify'
+                bat 'mvn spotbugs:spotbugs'
             }
         }
        stage('Build and Package') {
