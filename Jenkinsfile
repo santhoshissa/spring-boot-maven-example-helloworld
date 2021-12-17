@@ -13,7 +13,7 @@ pipeline {
         stage('SAST') {
             steps {
                 echo 'Running SAST'
-                bat 'mvn com.github.spotbugs:spotbugs-maven-plugin:spotbugs'
+                bat 'mvn spotbugs:spotbugs'
                
             }
         }
