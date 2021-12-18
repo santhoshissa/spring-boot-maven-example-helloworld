@@ -7,7 +7,7 @@ pipeline {
                 echo 'CheckOut SCM'
                 //cleanWs()
                 checkout scm
-                //git 'https://github.com/santhoshissa/spring-boot-maven-example-helloworld.git'
+                //git 'https://github.com/santhoshissa/cucumber-java-selenium-webdriver-example.git'
             }
         }
         stage('SAST') {
@@ -46,6 +46,22 @@ pipeline {
                 bat 'cd'
                 bat 'del "C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps\\SpringBootMavenExample-1.3.5.RELEASE.war"'
                 bat 'copy target\\SpringBootMavenExample-1.3.5.RELEASE.war "C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps\\"'
+            }
+        }
+        stage('Test Code Checkout') {
+            steps {
+                dir('web'){
+                echo 'CheckOut SCM'
+                git 'https://github.com/santhoshissa/cucumber-java-selenium-webdriver-example.git'
+                }
+            }
+        }
+        stage('Test Code Checkout') {
+            steps {
+                dir('web'){
+                bat 'mvn clean install'
+                 bat 'mvn test -Dwebdriver.chrome.driver=C:\Driver'
+            }
             }
         }
        
