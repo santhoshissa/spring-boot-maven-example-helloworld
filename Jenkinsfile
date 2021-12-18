@@ -51,8 +51,8 @@ pipeline {
         stage('Test Code Checkout') {
             steps {
                 dir('web'){
-                echo 'CheckOut SCM'
-                git 'https://github.com/santhoshissa/cucumber-java-selenium-webdriver-example.git'
+                echo 'Checkout Test SCM'
+                git 'https://github.com/santhoshissa/cucumber-testing-framework-using-selenium-java-maven.git'
                 }
             }
         }
@@ -60,7 +60,8 @@ pipeline {
             steps {
                 dir('web'){
                 bat 'mvn clean install'
-                 bat 'mvn test -Dwebdriver.chrome.driver=C:\\Driver'
+                 bat 'mvn install'
+                    bat 'mvn test'
             }
             }
         }
