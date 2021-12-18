@@ -52,7 +52,7 @@ pipeline {
             steps {
                 dir('web'){
                 echo 'Checkout Test SCM'
-                git 'https://github.com/santhoshissa/cucumber-testing-framework-using-selenium-java-maven.git'
+                git 'https://github.com/sithagariajayreddy/Maven-Selenium-Cucumber-Java.git'
                 }
             }
         }
