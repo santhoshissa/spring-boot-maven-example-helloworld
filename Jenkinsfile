@@ -56,7 +56,7 @@ pipeline {
                 }
             }
         }
-        stage('Test Code Checkout') {
+        stage('Functional Test') {
             steps {
                 dir('web'){
                 bat 'mvn clean install'
