@@ -69,10 +69,14 @@ pipeline {
             steps {
                 echo 'Non Functional Test'
                 //git 'https://github.com/santhoshissa/cucumber-testing-framework-using-selenium-java-maven.git'
-                bat 'C:\\apache-jmeter-5.4.2\\bin\\jmeter -j jmeter.save.saveservice.output_format=xml -n -t C:\\apache-jmeter-5.4.2\\bin\\JmeterTestCase.jmx -l C:\\apache-jmeter-5.4.2\\reports\\jmeterreport.jtl'
-               bat 'perfReport filterRegex: "", showTrendGraphs: true, sourceDataFiles: "C:\\apache-jmeter-5.4.2\\reports\\jmeterreport.jtl"'
+                bat 'C:\\apache-jmeter-5.4.2\\bin\\jmeter -j jmeter.save.saveservice.output_format=xml -n -t C:\\apache-jmeter-5.4.2\\bin\\JmeterTestCase.jmx -l C:\\apache-jmeter-5.4.2\\reports\\jmeterreport.jtl' 
             }
-                     }
+             post {
+    always {
+        perfReport filterRegex: '', showTrendGraphs: true, sourceDataFiles: 'C:\\apache-jmeter-5.4.2\\reports\\jmeterreport.jtl' 
+    }
+             }
+               }
        
     }
        tools {
