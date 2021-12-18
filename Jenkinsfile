@@ -60,7 +60,7 @@ pipeline {
             steps {
                 dir('web'){
                 bat 'mvn clean install'
-                 bat 'mvn test -Dwebdriver.chrome.driver=C:\Driver'
+                 bat 'mvn test -Dwebdriver.chrome.driver=C:\\Driver'
             }
             }
         }
