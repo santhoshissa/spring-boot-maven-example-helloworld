@@ -44,7 +44,7 @@ pipeline {
             steps {
                 echo 'deploy'
                 bat 'cd'
-                bat 'del "C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps\\SpringBootMavenExample-1.3.5.RELEASE.war"'
+                bat 'del "C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5.73\\webapps\\SpringBootMavenExample-1.3.5.RELEASE.war"'
                 bat 'copy target\\SpringBootMavenExample-1.3.5.RELEASE.war "C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5.73\\webapps\\"'
             }
         }
